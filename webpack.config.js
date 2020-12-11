@@ -32,7 +32,7 @@ module.exports = {
         use: ["style-loader", "css-loader", "postcss-loader", "less-loader"], // 注意顺序 less、sass放在postcss后面
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/i,
         use: ["url-loader"],
         // 使用下面的方法会报错 Error: Cannot find module 'file-loader'
         // use: [

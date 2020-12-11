@@ -114,3 +114,19 @@ WARNING in webpack performance recommendations:
 You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
 For more info visit https://webpack.js.org/guides/code-splitting/
 ```
+
+引入外部字体问题
+
+    ERROR in ./src/assets/fonts/Langar-Regular.woff 1:4
+    Module parse failed: Unexpected character '' (1:4)
+    You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
+    (Source code omitted for this binary file)
+
+[参考方法](https://stackoverflow.com/questions/47216927/module-parse-failed-unexpected-character-for-woff-woff2-and-ttf-file-webpack)
+
+```
+{
+ test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+ use: 'file-loader?name=fonts/[name].[ext]!static'
+}
+```
